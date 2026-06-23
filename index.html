@@ -6,9 +6,34 @@
   <title>Faaza F — Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Styling tambahan untuk pesan sukses form */
+    .form-status-message {
+      display: none;
+      margin-top: 15px;
+      padding: 12px;
+      text-align: center;
+      border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+    }
+    .form-status-message.success {
+      display: block;
+      background-color: rgba(39, 174, 96, 0.1);
+      border: 1px solid #27ae60;
+      color: #27ae60;
+    }
+    .form-status-message.error {
+      display: block;
+      background-color: rgba(231, 76, 60, 0.1);
+      border: 1px solid #e74c3c;
+      color: #e74c3c;
+    }
+  </style>
 </head>
 <body>
 
+  <!-- ── NAVBAR ── -->
   <nav id="navbar">
     <div class="nav-logo">
       FAAZA F
@@ -22,6 +47,7 @@
     </ul>
   </nav>
 
+  <!-- ── HERO ── -->
   <section class="hero" id="home">
     <div class="hero-inner">
       <div class="hero-left">
@@ -73,6 +99,7 @@
     </div>
   </section>
 
+  <!-- ── PROJECT ── -->
   <section class="section" id="project">
     <div class="section-inner">
       <div class="section-header">
@@ -110,24 +137,11 @@
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-img" style="background: linear-gradient(135deg, #3a1a3a, #9b59b6);">
-            <span class="project-icon">🤖</span>
-          </div>
-          <div class="project-body">
-            <span class="project-tag">AI / ML</span>
-            <h3>Klasifikasi Gambar</h3>
-            <p>Model machine learning untuk klasifikasi gambar menggunakan Python dan TensorFlow sebagai tugas akhir.</p>
-            <div class="project-stack">
-              <span>Python</span><span>TensorFlow</span><span>Keras</span>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
+  <!-- ── ABOUT ── -->
   <section class="section section-alt" id="about">
     <div class="section-inner">
       <div class="section-header">
@@ -164,33 +178,27 @@
           <div class="skills-list">
             <div class="skill-item">
               <div class="skill-top">
-                <span>HTML / CSS</span><span>85%</span>
+                <span>C / C++</span><span>25%</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" style="width: 85%; background: var(--accent);"></div></div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 25%; background: var(--accent);"></div></div>
             </div>
             <div class="skill-item">
               <div class="skill-top">
-                <span>JavaScript</span><span>70%</span>
+                <span>JavaScript</span><span>25%</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" style="width: 70%; background: #f39c12;"></div></div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 25%; background: #f39c12;"></div></div>
             </div>
             <div class="skill-item">
               <div class="skill-top">
-                <span>PHP / MySQL</span><span>75%</span>
+                <span>HTML / CSS</span><span>25%</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" style="width: 75%; background: #8e44ad;"></div></div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 25%; background: #8e44ad;"></div></div>
             </div>
             <div class="skill-item">
               <div class="skill-top">
-                <span>Python</span><span>60%</span>
+                <span>Python</span><span>25%</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" style="width: 60%; background: #27ae60;"></div></div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-top">
-                <span>Java / Android</span><span>55%</span>
-              </div>
-              <div class="skill-bar"><div class="skill-fill" style="width: 55%; background: #e74c3c;"></div></div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 25%; background: #27ae60;"></div></div>
             </div>
           </div>
         </div>
@@ -198,6 +206,7 @@
     </div>
   </section>
 
+  <!-- ── CONTACT ── -->
   <section class="section" id="contact">
     <div class="section-inner">
       <div class="section-header">
@@ -215,7 +224,7 @@
             </div>
             <div>
               <span class="contact-label">Email</span>
-              <span class="contact-val">diluczyy@gmail.com</span>
+              <span class="contact-val">faazaf@gmail.com</span>
             </div>
           </div>
           <div class="contact-item">
@@ -238,12 +247,13 @@
             </div>
             <div>
               <span class="contact-label">Instagram</span>
-              <span class="contact-val">@zimaashytt</span>
+              <span class="contact-val">@faazaf</span>
             </div>
           </div>
         </div>
 
-        <form class="contact-form" action="https://formspree.io/f/mjgqkkbb" method="POST">
+        <!-- FORM DENGAN AJAX HANDLING -->
+        <form id="my-form" class="contact-form" action="https://formspree.io/f/mjgqkkbb" method="POST">
           <div class="form-group">
             <label for="name">Nama</label>
             <input type="text" id="name" name="name" placeholder="Nama kamu" required />
@@ -256,14 +266,16 @@
             <label for="message">Pesan</label>
             <textarea id="message" name="message" rows="4" placeholder="Tulis pesanmu di sini..." required></textarea>
           </div>
-          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+          <button id="my-form-button" type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
             Kirim Pesan
           </button>
+          <div id="my-form-status" class="form-status-message"></div>
         </form>
       </div>
     </div>
   </section>
 
+  <!-- ── FOOTER ── -->
   <footer>
     <p>© 2026 Faaza F · Dibuat dengan ❤️ di Kuningan</p>
   </footer>
@@ -299,6 +311,49 @@
         }
       });
     });
+
+    // Handle Form submission via AJAX (Mencegah redirect Formspree)
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var button = document.getElementById("my-form-button");
+      var data = new FormData(event.target);
+      
+      button.disabled = true;
+      button.innerText = "Mengirim...";
+
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.classList.remove("error");
+          status.classList.add("success");
+          status.innerHTML = "Terima kasih, pesan anda akan saya baca!";
+          form.reset();
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+            } else {
+              status.innerHTML = "Oops! Ada masalah saat mengirim pesan Anda.";
+            }
+          })
+        }
+      }).catch(error => {
+        status.classList.add("error");
+        status.innerHTML = "Oops! Terjadi kendala jaringan.";
+      }).finally(() => {
+        button.disabled = false;
+        button.innerText = "Kirim Pesan";
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
   </script>
 
 </body>
