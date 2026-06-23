@@ -9,7 +9,6 @@
 </head>
 <body>
 
-  <!-- ── NAVBAR ── -->
   <nav id="navbar">
     <div class="nav-logo">
       FAAZA F
@@ -23,7 +22,6 @@
     </ul>
   </nav>
 
-  <!-- ── HERO ── -->
   <section class="hero" id="home">
     <div class="hero-inner">
       <div class="hero-left">
@@ -51,7 +49,7 @@
           <div class="corner-accent br"></div>
           <div class="photo-bg"></div>
           <div class="photo-placeholder">
-            <img src="om-gondrong.png" alt="Foto Faaza F" loading="lazy" />
+            <img src="om-gondrong.png" alt="Foto Faaza F" />
           </div>
           <div class="badge-float top-left">
             <div class="badge-dot"></div>
@@ -75,7 +73,6 @@
     </div>
   </section>
 
-  <!-- ── PROJECT ── -->
   <section class="section" id="project">
     <div class="section-inner">
       <div class="section-header">
@@ -92,7 +89,7 @@
           <div class="project-body">
             <span class="project-tag">Web Dev</span>
             <h3>Website Sistem Informasi</h3>
-            <p>Sistem informasi akademik berbasis web menggunakan JavaScript dan GUI.</p>
+            <p>Sistem informasi akademik berbasis web menggunakan PHP dan MySQL untuk manajemen data mahasiswa.</p>
             <div class="project-stack">
               <span>PHP</span><span>MySQL</span><span>Bootstrap</span>
             </div>
@@ -113,11 +110,24 @@
           </div>
         </div>
 
+        <div class="project-card">
+          <div class="project-img" style="background: linear-gradient(135deg, #3a1a3a, #9b59b6);">
+            <span class="project-icon">🤖</span>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">AI / ML</span>
+            <h3>Klasifikasi Gambar</h3>
+            <p>Model machine learning untuk klasifikasi gambar menggunakan Python dan TensorFlow sebagai tugas akhir.</p>
+            <div class="project-stack">
+              <span>Python</span><span>TensorFlow</span><span>Keras</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ── ABOUT ── -->
   <section class="section section-alt" id="about">
     <div class="section-inner">
       <div class="section-header">
@@ -154,27 +164,33 @@
           <div class="skills-list">
             <div class="skill-item">
               <div class="skill-top">
-                <span>HTML / CSS</span><span>25%</span>
+                <span>HTML / CSS</span><span>85%</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" style="width: 25%; background: var(--accent);"></div></div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 85%; background: var(--accent);"></div></div>
             </div>
             <div class="skill-item">
               <div class="skill-top">
-                <span>JavaScript</span><span>20%</span>
+                <span>JavaScript</span><span>70%</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" style="width: 20%; background: #f39c12;"></div></div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 70%; background: #f39c12;"></div></div>
             </div>
             <div class="skill-item">
               <div class="skill-top">
-                <span>PHP / MySQL</span><span>20%</span>
+                <span>PHP / MySQL</span><span>75%</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" style="width: 20%; background: #8e44ad;"></div></div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 75%; background: #8e44ad;"></div></div>
             </div>
             <div class="skill-item">
               <div class="skill-top">
-                <span>C / C++</span><span>25%</span>
+                <span>Python</span><span>60%</span>
               </div>
-              <div class="skill-bar"><div class="skill-fill" style="width: 25%; background: #27ae60;"></div></div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 60%; background: #27ae60;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-top">
+                <span>Java / Android</span><span>55%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width: 55%; background: #e74c3c;"></div></div>
             </div>
           </div>
         </div>
@@ -182,7 +198,6 @@
     </div>
   </section>
 
-  <!-- ── CONTACT ── -->
   <section class="section" id="contact">
     <div class="section-inner">
       <div class="section-header">
@@ -200,7 +215,7 @@
             </div>
             <div>
               <span class="contact-label">Email</span>
-              <span class="contact-val">20250810056@uniku.ac.id</span>
+              <span class="contact-val">faazaf@gmail.com</span>
             </div>
           </div>
           <div class="contact-item">
@@ -223,34 +238,32 @@
             </div>
             <div>
               <span class="contact-label">Instagram</span>
-              <span class="contact-val">@zimaashytt</span>
+              <span class="contact-val">@faazaf</span>
             </div>
           </div>
         </div>
 
-        <form class="contact-form" onsubmit="handleSubmit(event)">
+        <form class="contact-form" action="https://formspree.io/f/mjgqkkbb" method="POST">
           <div class="form-group">
             <label for="name">Nama</label>
-            <input type="text" id="name" placeholder="Nama kamu" required />
+            <input type="text" id="name" name="name" placeholder="Nama kamu" required />
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="email@kamu.com" required />
+            <input type="email" id="email" name="email" placeholder="email@kamu.com" required />
           </div>
           <div class="form-group">
             <label for="message">Pesan</label>
-            <textarea id="message" rows="4" placeholder="Tulis pesanmu di sini..." required></textarea>
+            <textarea id="message" name="message" rows="4" placeholder="Tulis pesanmu di sini..." required></textarea>
           </div>
           <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
             Kirim Pesan
           </button>
-          <p class="form-success" id="form-success">✓ Pesan terkirim! Saya akan segera membalas.</p>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
   <footer>
     <p>© 2026 Faaza F · Dibuat dengan ❤️ di Kuningan</p>
   </footer>
@@ -272,9 +285,9 @@
     const navLinks = document.querySelectorAll('.nav-link');
 
     window.addEventListener('scroll', () => {
-      let current = 'home';
+      let current = '';
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
+        const sectionTop = section.offsetTop - 80;
         if (window.scrollY >= sectionTop) {
           current = section.getAttribute('id');
         }
@@ -286,18 +299,6 @@
         }
       });
     });
-
-    // Form submit
-    function handleSubmit(e) {
-      e.preventDefault();
-      const successMessage = document.getElementById('form-success');
-      successMessage.style.display = 'block';
-      e.target.reset();
-
-      setTimeout(() => {
-        successMessage.style.display = 'none';
-      }, 4000);
-    }
   </script>
 
 </body>
